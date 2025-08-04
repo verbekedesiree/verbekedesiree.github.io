@@ -165,6 +165,10 @@ h1, .h1 {
   margin-top: 2rem;
 }
 
+.userCode {
+  position: absolute; left: -50000px; 
+} 
+
 .form-group {
   display: flex;
   flex-direction: column;

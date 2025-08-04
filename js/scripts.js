@@ -39,6 +39,16 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     };
 
+    // prevent submit for filled in honeypot 
+     document.getElementById('submitForm').addEventListener('submit', function(event) {
+        const usercode = document.getElementById('usercode').value;
+        if (usercode.length > 0) {
+            alert("not human");
+            event.preventDefault(); 
+            return false;
+        }
+    });
+
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
     const responsiveNavItems = [].slice.call(
