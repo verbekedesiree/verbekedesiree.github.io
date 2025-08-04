@@ -47,7 +47,7 @@ window.addEventListener('DOMContentLoaded', event => {
                 message: document.getElementById('message').value,
             };
             console.log('hier');
-            const response = fetch('../api/submit.js', {
+            const response = fetch('/api/submit', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
