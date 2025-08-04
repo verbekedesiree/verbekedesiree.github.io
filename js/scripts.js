@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
     };
 
-    
+
 
     // Shrink the navbar 
     navbarShrink();
@@ -32,28 +32,31 @@ window.addEventListener('DOMContentLoaded', event => {
     };
 
     // prevent submit for filled in honeypot 
-     document.getElementById('submitForm').addEventListener('submit', function(event) {
+    document.getElementById('submitForm').addEventListener('submit', function (event) {
         const usercode = document.getElementById('usercode').value;
         if (usercode.length > 0) {
             alert("not human");
-            event.preventDefault(); 
+            event.preventDefault();
             return false;
         }
-         const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            phone: document.getElementById('phone').value,
-            message: document.getElementById('message').value,
-        };
-        console.log('hier');
-        const response = fetch('../api/submit.js', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData),
-        });
+        else {
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                message: document.getElementById('message').value,
+            };
+            console.log('hier');
+            const response = fetch('../api/submit.js', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
 
-        const result = response.json();
-        console.log(result);
+            const result = response.json();
+            console.log(result);
+        }
+
 
     });
 
