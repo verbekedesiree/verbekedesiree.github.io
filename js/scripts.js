@@ -7,7 +7,6 @@
 // Scripts
 // 
 
-
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function
@@ -23,6 +22,10 @@ window.addEventListener('DOMContentLoaded', event => {
         }
 
     };
+
+    
+
+    const web3formsToken = process.env.web3forms_accesskey;
 
     // Shrink the navbar 
     navbarShrink();
@@ -47,6 +50,21 @@ window.addEventListener('DOMContentLoaded', event => {
             event.preventDefault(); 
             return false;
         }
+         const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            message: document.getElementById('message').value,
+        };
+        const response = fetch('/api/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData),
+        });
+
+        const result = response.json();
+        console.log(result);
+
     });
 
     // Collapse responsive navbar when toggler is visible
