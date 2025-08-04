@@ -16,8 +16,6 @@ window.addEventListener('DOMContentLoaded', event => {
 
     
 
-    const web3formsToken = process.env.web3forms_accesskey;
-
     // Shrink the navbar 
     navbarShrink();
 
@@ -47,7 +45,8 @@ window.addEventListener('DOMContentLoaded', event => {
             phone: document.getElementById('phone').value,
             message: document.getElementById('message').value,
         };
-        const response = fetch('/api/submit', {
+        console.log('hier');
+        const response = fetch('../api/submit.js', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData),
