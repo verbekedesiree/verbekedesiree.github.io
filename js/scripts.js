@@ -39,23 +39,23 @@ window.addEventListener('DOMContentLoaded', event => {
             event.preventDefault();
             return false;
         }
-        else {
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                message: document.getElementById('message').value,
-            };
-            console.log('hier');
-            const response = fetch('/api/submit', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
-            });
+        // else {
+        //     const formData = {
+        //         name: document.getElementById('name').value,
+        //         email: document.getElementById('email').value,
+        //         phone: document.getElementById('phone').value,
+        //         message: document.getElementById('message').value,
+        //     };
+        //     console.log('hier');
+        //     const response = fetch('/api/submit', {
+        //         method: 'POST',
+        //         headers: { 'Content-Type': 'application/json' },
+        //         body: JSON.stringify(formData),
+        //     });
 
-            const result = response.json();
-            console.log(result);
-        }
+        //     const result = response.json();
+        //     console.log(result);
+        // }
 
 
     });
