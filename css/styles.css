@@ -3703,6 +3703,10 @@ textarea.form-control-lg {
   margin-bottom: 0;
   list-style: none;
 }
+.center {
+  text-align: center;
+}
+
 
 .nav-link {
   display: block;
